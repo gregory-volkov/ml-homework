@@ -1,48 +1,34 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import precision_recall_fscore_support
-from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
-from utils import plot_contours, set_clf_params
-from constants import *
+from utils import plot_contours, set_clf_params, clf_accuracy, read_data
+from constants import svc_param_grid
 
-# Get and preprocess data
-data = np.genfromtxt('chips.txt', delimiter=',')
-np.random.shuffle(data)
-X, y = np.split(data, [-1], axis=1)
 
-# Amount of data
-samples_n = len(data)
+# Draw dots with the color depending on the cluster
+def scatter_cluster_dots(plt, xx, yy):
+    for i in range(len(xx)):
+        plt.scatter(
+            xx[i, 0], xx[i, 1],
+            color="red" if yy[i] else "blue",
+            zorder=3,
+        )
 
-# Splitting data for train and test
-train_n = int(train_percentage / 100 * samples_n)
-data_train = data[:train_n, :]
-data_test = data[train_n:, :]
 
-X_train, y_train = np.split(data_train, [-1], axis=1)
-X_test, y_test = np.split(data_test, [-1], axis=1)
-
-y, y_train, y_test = (y.ravel(), y_train.ravel(), y_test.ravel())
+# Read data from file
+X, y, X_train, y_train, X_test, y_test = read_data('chips.txt')
 
 # Create SVC classifier
 clf = SVC()
 
 # Calculate best parameters for SVC using GridSearchCV
-set_clf_params(clf, param_grid, X, y)
+set_clf_params(clf, svc_param_grid, X, y)
 
 # Fit the model
 clf.fit(X, y)
 
-
-# Print dots with the color depending on the cluster
-def scatter_dots(xx, yy):
-    for i in range(len(xx)):
-        plt.scatter(
-            xx[i, 0], xx[i, 1],
-            color="red" if yy[i] else "blue",
-            zorder=3
-        )
-
+# Compute metrics
+print(clf_accuracy(clf, X_train, y_train, X_test, y_test))
 
 # Draw separating plane
 x_min = X[:, 0].min()
@@ -69,7 +55,7 @@ ax.set_facecolor((0.8, 0.8, 1))
 plot_contours(plt, clf, xx, yy,
               colors=((0.8, 0.8, 1), (1, 0.8, 0.8)), levels=1)
 
-scatter_dots(X_train, y_train)
+scatter_cluster_dots(plt, X_train, y_train)
 
 
 plt.subplot(122)
@@ -80,7 +66,5 @@ ax.set_facecolor((0.8, 0.8, 1))
 plot_contours(plt, clf, xx, yy,
               colors=((0.8, 0.8, 1), (1, 0.8, 0.8)), levels=1)
 
-scatter_dots(X_test, y_test)
-scatter_dots(X_test, y_test)
-scatter_dots(X_test, y_test)
+scatter_cluster_dots(plt, X_test, y_test)
 plt.show()
