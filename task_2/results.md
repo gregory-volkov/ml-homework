@@ -1,7 +1,7 @@
 # Task 2: SVM and kNN 
 
 ## Optimal configuration
-The data was splitted on train and test sets with in proportion 80:20
+The data was splitted on train and test sets in proportion 80:20
 
 | Classifier  | Configuration                                                   |
 |-------------|-----------------------------------------------------------------|
