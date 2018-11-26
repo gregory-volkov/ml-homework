@@ -1,6 +1,8 @@
 # Task 2: SVM and kNN 
 
 ## Optimal configuration
+The data was splitted on train and test sets with in proportion 80:20
+
 | Classifier  | Configuration                                                   |
 |-------------|-----------------------------------------------------------------|
 | SVM         | {'C': 10, 'degree': 2, 'gamma': 1, 'kernel': 'rbf'}             |
