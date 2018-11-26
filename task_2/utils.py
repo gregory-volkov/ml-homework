@@ -12,20 +12,7 @@ def plot_contours(ax, clf, xx, yy, **params):
 
 
 # Function for getting best hyperparameters
-def set_svm_params(clf, X, y):
-    param_grid = [
-        {
-            'kernel': ['linear'],
-            'C': [10 ** i for i in range(-4, 2)],
-            "degree": [2, 3, 4]
-        },
-        {
-            'kernel': ['poly', 'rbf', 'sigmoid'],
-            'C': [10 ** i for i in range(-4, 2)],
-            'gamma': [10 ** i for i in range(-4, 2)],
-            "degree": [2, 3, 4]
-        }
-    ]
+def set_clf_params(clf, param_grid, X, y):
     grid_search = GridSearchCV(estimator=clf, param_grid=param_grid, cv=3, iid=False)
     grid_search.fit(X, y)
     best_params = grid_search.best_params_

@@ -3,11 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
-from utils import plot_contours, set_svm_params
-
-
-# Percentage of data, that is using for training
-train_percentage = 75
+from utils import plot_contours, set_clf_params
+from constants import *
 
 # Get and preprocess data
 data = np.genfromtxt('chips.txt', delimiter=',')
@@ -31,7 +28,7 @@ y, y_train, y_test = (y.ravel(), y_train.ravel(), y_test.ravel())
 clf = SVC()
 
 # Calculate best parameters for SVC using GridSearchCV
-set_svm_params(clf, X, y)
+set_clf_params(clf, param_grid, X, y)
 
 # Fit the model
 clf.fit(X, y)
