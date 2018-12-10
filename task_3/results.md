@@ -1,7 +1,7 @@
 # Task 3: applying kmeans for for image compression
 
 ## Optimal configuration
-A small value of "max iteration" and "number of initialization" parameters is better. Both are equal to three in this task.  
+"max iteration" and "number of initialization" parameters were set to three in this task.  
 Numbers of clusters are 2, 3, and 4.
 
 
