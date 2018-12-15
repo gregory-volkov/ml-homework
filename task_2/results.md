@@ -15,3 +15,11 @@ Average accuracy score for 100 launches (for train and test sets)
 |-------------|-----------|----------|
 | SVM         | 0.8366    | 0.8383   |
 | kNN         | 1.0       | 1.0      |
+
+## Average ROC-AUC score
+Average ROC-AUC score for 100 launches (for train and test sets)
+
+| Classifier  | Train set | Test set |
+|-------------|-----------|----------|
+| SVM         | 0.8373    | 0.8448   |
+| kNN         | 0.8373    | 0.8740   |
