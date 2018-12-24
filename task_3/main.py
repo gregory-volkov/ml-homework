@@ -2,23 +2,26 @@ from PIL import Image
 import numpy as np
 from kmeans import kmeans
 
-# Change this:
-image_name = "peppers"
+# Global parameters:
+image_names = ["lena", "peppers", "grain"]
+n_clusters_list = [2, 3, 5, 10, 15, 20]
+max_iter = 300
+n_init = 1
 
 
-input_image_file = f"images/{image_name}.jpg"
+for image_name in image_names:
 
-image = np.array(Image.open(input_image_file))
-X = image.reshape((image.shape[0] * image.shape[1], image.shape[2]))
+    input_image_file = f"images/{image_name}.jpg"
 
-for k in range(2, 5):
+    image = np.array(Image.open(input_image_file))
+    X = image.reshape((image.shape[0] * image.shape[1], image.shape[2]))
 
-    output_image_file = f"images/{image_name}_compressed_{k}.jpg"
-    centroids, clustered = kmeans(X, n_clusters=k, max_iter=3, n_init=3)
-
-    new_X = np.stack(
-        centroids[i] for i in clustered
-    )
-
-    new_image = new_X.reshape(image.shape)
-    Image.fromarray(new_image).save(output_image_file)
+    for k in n_clusters_list:
+        output_image_file = f"result_images/{image_name}_{k}_clusters.jpg"
+        centroids, clustered = kmeans(X, n_clusters=k, max_iter=max_iter, n_init=n_init)
+        centroids = centroids.astype(np.uint8)
+        new_X = np.stack(
+            centroids[i] for i in clustered
+        )
+        new_image = new_X.reshape(image.shape)
+        Image.fromarray(new_image).save(output_image_file)
