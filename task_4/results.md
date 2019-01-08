@@ -1,4 +1,4 @@
-# Task 4: 
+# Task 4
 
 ## Cluster metrics
 Implementations of the metrics are in metrics directory:
@@ -18,7 +18,7 @@ From these 2 plots we can see that the optimal number of clusters is 5.
 
 | | |
 |:-------------------------:|:-------------------------:|
-<img width="1604" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen.jpg">  Original | <img width="1604" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen_5_clusters.jpg">  Compressed (5 clusters) |
+<img src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen.jpg">  Original | <img src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen_5_clusters.jpg">  Compressed (5 clusters) |
 
 ## Data_7 clustering
 
