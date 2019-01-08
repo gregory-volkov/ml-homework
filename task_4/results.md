@@ -18,7 +18,7 @@ From these 2 plots we can see that the optimal number of clusters is 5.
 
 | | |
 |:-------------------------:|:-------------------------:|
-<img height="481" width="321" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen.jpg">  Original | <img height="481" width="321" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen_5_clusters.jpg">  Compressed |
+| <img height="481" width="321" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen.jpg">  Original | <img height="481" width="321" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen_5_clusters.jpg">  Compressed (5 clusters) |
 
 ## Data_7 clustering
 
