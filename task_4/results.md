@@ -11,7 +11,7 @@ Implementations of the metrics are in metrics directory:
 
 | |
 |:-------------------------:|
-| <img width="1604" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen.jpg">  Metrics values plot |
+| <img width="1604" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/dav_cal.png">  Metrics values plot |
 
 From these 2 plots we can see that the optimal number of clusters is 5.  
 [Link](https://github.com/grihanaft/ml-homework/blob/master/task_4/policemen_metrics.py) to the script created the plots.
@@ -25,6 +25,6 @@ From these 2 plots we can see that the optimal number of clusters is 5.
 
 | |
 |:-------------------------:|
-| <img width="1604" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/policemen.jpg">  Metrics values plot of the task_2_data_7 clustering |
+| <img width="1604" src="https://github.com/grihanaft/ml-homework/blob/master/task_4/images/rand_fow.png">  Metrics values plot of the task_2_data_7 clustering |
 
 [Link](https://github.com/grihanaft/ml-homework/blob/master/task_4/data_7.py) to the script created the plots.
