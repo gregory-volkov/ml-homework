@@ -1,5 +1,5 @@
 import numpy as np
-from utils import normalize_labels
+from .utils import normalize_labels
 
 
 def calinski_harabaz_score(X, labels):

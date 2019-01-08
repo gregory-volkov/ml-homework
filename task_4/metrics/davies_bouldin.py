@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.metrics import pairwise_distances
-from utils import normalize_labels
-
+from .utils import normalize_labels
+from sklearn.metrics import davies_bouldin_score
 
 def davies_bouldin_score(X, labels):
     labels = normalize_labels(labels)

@@ -1,6 +1,6 @@
 import numpy as np
 from itertools import product
-from utils import normalize_labels
+from .utils import normalize_labels
 
 
 def fowlkes_mallows_score(labels_true, labels_pred):
